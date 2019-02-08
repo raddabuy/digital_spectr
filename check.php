@@ -8,7 +8,7 @@
       }
 
         if($valid){
-          $year = trim($_POST['year']);
+          $year = trim(filter_var($_POST['year'], FILTER_SANITIZE_STRING));
           $text = "Год ".$year. " является високосным?";
             if ($year%4 == 0) {
               $message = 'ДА';
